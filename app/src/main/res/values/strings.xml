@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="app_title">Project Mobile</string>
+    <string name="config_str">Settings</string>
+    <string name="navigation_str">Navigation</string>
+    <string name="history_str">History</string>
+    <string name="gnss_str">GNSS</string>
+    <string name="credits_str">Credits</string>
+    <string name="wip_str">Work in progress</string>
+
+    <!-- Preference Titles -->
+
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
+    <string name="exit_str">Exit</string>
+    <string name="devs_str">Developers:</string>
+    <string name="ver_str">Version:</string>
+    <string name="config_formato">Format of presentation of geographic coordinates:</string>
+    <string name="config_vel">Speed display unit:</string>
+    <string name="config_map_orien">Map Orientation:</string>
+    <string name="config_map_type">Map Type:</string>
+    <string name="formato_dec">Decimal degree</string>
+    <string name="formato_min_dec">Decimal minute degree</string>
+    <string name="formato_min_seg_dec">Decimal second minute degree</string>
+    <string name="vel_km">Km/h (kilometer per hour)</string>
+    <string name="vel_mp">Mph (miles per hour)</string>
+    <string name="map_orien_none">None (User can manually choose map orientation)</string>
+    <string name="map_orien_northup">North Up (North of the map aligned with the top of the device)</string>
+    <string name="map_orien_courseup">Course Up (Top of map aligned with direction of travel)</string>
+    <string name="map_type_vet">Vector</string>
+    <string name="map_type_sat">Satellite Image</string>
+    <string name="btnSave">Save</string>
+    <string name="config_salvo">Your settings have been saved.</string>
+    <string name="config_traffic">Traffic information:</string>
+    <string name="config_traffic_on">On</string>
+    <string name="config_traffic_off">Off</string>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projeto</string>
+    <string name="app_title">Projeto Mobile</string>
+    <string name="config_str">Configurações</string>
+    <string name="navigation_str">Navegação</string>
+    <string name="history_str">Histórico</string>
+    <string name="gnss_str">GNSS</string>
+    <string name="credits_str">Créditos</string>
+    <string name="wip_str">Em construção</string>
+    <string name="exit_str">Sair</string>
+    <string name="devs_str">Desenvolvedores:</string>
+    <string name="ver_str">Versão:</string>
+    <string name="config_formato">Formato de apresentação das coordenadas geográficas:</string>
+    <string name="config_vel">Unidade de apresentação da velocidade:</string>
+    <string name="config_map_orien">Orientação do Mapa:</string>
+    <string name="config_map_type">Tipo do Mapa:</string>
+    <string name="formato_dec">Grau decimal</string>
+    <string name="formato_min_dec">Grau-minuto decimal</string>
+    <string name="formato_min_seg_dec">Grau-minuto-segundo decimal</string>
+    <string name="vel_km">Km/h (quilometro por hora)</string>
+    <string name="vel_mp">Mph (milhas por hora)</string>
+    <string name="map_orien_none">Nenhuma (O usuário pode escolher manualmente a orientação do mapa)</string>
+    <string name="map_orien_northup">Norte acima (Norte do mapa alinhado com o topo do dispositivo)</string>
+    <string name="map_orien_courseup">Curso acima (topo do mapa alinhado com a direção da viagem)</string>
+    <string name="map_type_sat">Imagem de Satélite</string>
+    <string name="map_type_vet">Vetorial</string>
+    <string name="btnSave">Salvar</string>
+    <string name="config_salvo">Suas configurações foram salvas.</string>
+    <string name="config_traffic">Informações de tráfego:</string>
+    <string name="config_traffic_on">Ligado</string>
+    <string name="config_traffic_off">Desligado</string>
+</resources>
