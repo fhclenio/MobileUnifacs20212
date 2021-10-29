@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NavigationActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imgMyLocation"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/myloc_img_desc"
+        android:focusable="true"
+        android:src="@android:drawable/ic_menu_mylocation"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map"
+        tools:ignore="ImageContrastCheck,SpeakableTextPresentCheck"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tvLatitude"
+        android:layout_width="331dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/tv_lat"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imgMyLocation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/map" />
+
+    <TextView
+        android:id="@+id/tvLongitude"
+        android:layout_width="335dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/tv_long"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imgMyLocation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLatitude" />
+
+    <TextView
+        android:id="@+id/tvVelocidade"
+        android:layout_width="335dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/audiowide"
+        android:text="@string/tv_vel"
+        android:textColor="#2E7D32"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imgMyLocation"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLongitude" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

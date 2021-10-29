@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Project</string>
-    <string name="app_title">Project Mobile</string>
+    <string name="app_title">MAPS</string>
     <string name="config_str">Settings</string>
     <string name="navigation_str">Navigation</string>
     <string name="history_str">History</string>
@@ -35,4 +35,11 @@
     <string name="config_traffic">Traffic information:</string>
     <string name="config_traffic_on">On</string>
     <string name="config_traffic_off">Off</string>
+    <string name="title_activity_navigation">Navigation Activity</string>
+    <string name="warning_no_permission">We don\'t have permission to show your location, change this in the device settings.</string>
+    <string name="my_location">My Location</string>
+    <string name="myloc_img_desc">My Location custom button</string>
+    <string name="tv_lat" translatable="false">Latitude:</string>
+    <string name="tv_long" translatable="false">Longitude:</string>
+    <string name="tv_vel">Velocity:</string>
 </resources>
