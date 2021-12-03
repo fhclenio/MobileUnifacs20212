@@ -116,7 +116,19 @@ public class GnssActivity extends AppCompatActivity implements LocationListener 
         tvLong.setText(lsLong);
     }
     private void AtualizaInfoGnss(GnssStatus status){
+        int countSatsInUse = 0;
+        if (status != null) {
+            for (int i = 0; i < status.getSatelliteCount(); i++) {
+                if(status.usedInFix(i)){
+                    countSatsInUse++;
+                }
+            }
+        }
+        TextView tvSatsInUse = (TextView) findViewById(R.id.tvSatsInUse);
+        TextView tvSatsInView = (TextView) findViewById(R.id.tvSatsInView);
 
+        tvSatsInUse.setText(getString(R.string.tv_sats_in_use) + " " + countSatsInUse );
+        tvSatsInView.setText(getString(R.string.tv_sats_in_view) + " " + status.getSatelliteCount());
     }
 
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
@@ -169,20 +181,6 @@ public class GnssActivity extends AppCompatActivity implements LocationListener 
             circleView.AtualizaStatus(status);
             circleView.invalidate();
             AtualizaInfoGnss(status);
-
-            int countSatsInUse = 0;
-            if (status != null) {
-                for (int i = 0; i < status.getSatelliteCount(); i++) {
-                    if(status.usedInFix(i)){
-                        countSatsInUse++;
-                    }
-                }
-            }
-            TextView tvSatsInUse = (TextView) findViewById(R.id.tvSatsInUse);
-            TextView tvSatsInView = (TextView) findViewById(R.id.tvSatsInView);
-
-            tvSatsInUse.setText(getString(R.string.tv_sats_in_use) + " " + countSatsInUse );
-            tvSatsInView.setText(getString(R.string.tv_sats_in_view) + " " + status.getSatelliteCount());
         }
 
     }

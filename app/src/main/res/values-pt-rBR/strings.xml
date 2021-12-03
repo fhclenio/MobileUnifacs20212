@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Projeto</string>
+    <string name="app_name">MAPS</string>
     <string name="app_title">MAPS</string>
     <string name="config_str">Configurações</string>
     <string name="navigation_str">Navegação</string>
@@ -38,4 +38,7 @@
     <string name="tv_sats_in_use">Em Uso:</string>
     <string name="tv_sats_in_view">Visíveis:</string>
     <string name="cnr_txt">Proporção de Ruído do Transmissor (%)</string>
+    <string name="tv_title_history">Localizações salvas no banco de dados:</string>
+    <string name="btn_map">MAPA</string>
+    <string name="btn_delete">Excluir histórico.</string>
 </resources>

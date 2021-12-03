@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -48,7 +47,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(new Intent(this, GnssActivity.class));
                 break;
             case R.id.buttonHist:
-                Toast.makeText(this, R.string.wip_str ,Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, HistoryActivity.class));
                 break;
             case R.id.buttonNav:
                 startActivity(new Intent(this, NavigationActivity.class));
