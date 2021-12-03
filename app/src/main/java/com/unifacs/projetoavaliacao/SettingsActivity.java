@@ -1,16 +1,16 @@
 package com.unifacs.projetoavaliacao;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.Toast;
 
-public class SettingsActivity extends AppCompatActivity implements View.OnClickListener{
+public class SettingsActivity extends Activity implements View.OnClickListener{
     private SharedPreferences sharedPrefs;
     private SharedPreferences.Editor sharedPrefsEditor;
 
@@ -24,8 +24,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     private RadioButton btnOrienCourse;
     private RadioButton btnTypeVet;
     private RadioButton btnTypeSat;
-    private RadioButton btnTrafficON;
-    private RadioButton btnTrafficOFF;
+    private Switch switchTraffic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +47,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         btnTypeVet = findViewById(R.id.rbtnConfigVet);
         btnTypeSat = findViewById(R.id.rbtnConfigSat);
 
-        btnTrafficOFF = findViewById(R.id.rbtnConfigTrafficOFF);
-        btnTrafficON = findViewById(R.id.rbtnConfigTrafficON);
+        switchTraffic = findViewById(R.id.switchTraffic);
 
         Button btnSalvar = (Button) findViewById(R.id.btnSalvar);
         btnSalvar.setOnClickListener(this);
@@ -106,7 +104,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         }
         sharedPrefsEditor.commit();
 
-        if(btnTrafficON.isChecked()){
+        if(switchTraffic.isChecked()){
             sharedPrefsEditor.putString("ConfigTraffic", "On");
         }
         else{
@@ -168,127 +166,12 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
         switch(configTraffic){
             case "On":
-                btnTrafficON.toggle();
+                switchTraffic.setChecked(true);
                 break;
             case "Off":
-                btnTrafficOFF.toggle();
+                switchTraffic.setChecked(false);
                 break;
         }
     }
 
-
-
-
-
-    public SharedPreferences getSharedPrefs() {
-        return sharedPrefs;
-    }
-
-    public void setSharedPrefs(SharedPreferences sharedPrefs) {
-        this.sharedPrefs = sharedPrefs;
-    }
-
-    public SharedPreferences.Editor getSharedPrefsEditor() {
-        return sharedPrefsEditor;
-    }
-
-    public void setSharedPrefsEditor(SharedPreferences.Editor sharedPrefsEditor) {
-        this.sharedPrefsEditor = sharedPrefsEditor;
-    }
-
-    public RadioButton getBtnDecimal() {
-        return btnDecimal;
-    }
-
-    public void setBtnDecimal(RadioButton btnDecimal) {
-        this.btnDecimal = btnDecimal;
-    }
-
-    public RadioButton getBtnDecimalMin() {
-        return btnDecimalMin;
-    }
-
-    public void setBtnDecimalMin(RadioButton btnDecimalMin) {
-        this.btnDecimalMin = btnDecimalMin;
-    }
-
-    public RadioButton getBtnDecimalSegMin() {
-        return btnDecimalSegMin;
-    }
-
-    public void setBtnDecimalSegMin(RadioButton btnDecimalSegMin) {
-        this.btnDecimalSegMin = btnDecimalSegMin;
-    }
-
-    public RadioButton getBtnKm() {
-        return btnKm;
-    }
-
-    public void setBtnKm(RadioButton btnKm) {
-        this.btnKm = btnKm;
-    }
-
-    public RadioButton getBtnMph() {
-        return btnMph;
-    }
-
-    public void setBtnMph(RadioButton btnMph) {
-        this.btnMph = btnMph;
-    }
-
-    public RadioButton getBtnOrienNone() {
-        return btnOrienNone;
-    }
-
-    public void setBtnOrienNone(RadioButton btnOrienNone) {
-        this.btnOrienNone = btnOrienNone;
-    }
-
-    public RadioButton getBtnOrienNorth() {
-        return btnOrienNorth;
-    }
-
-    public void setBtnOrienNorth(RadioButton btnOrienNorth) {
-        this.btnOrienNorth = btnOrienNorth;
-    }
-
-    public RadioButton getBtnOrienCourse() {
-        return btnOrienCourse;
-    }
-
-    public void setBtnOrienCourse(RadioButton btnOrienCourse) {
-        this.btnOrienCourse = btnOrienCourse;
-    }
-
-    public RadioButton getBtnTypeVet() {
-        return btnTypeVet;
-    }
-
-    public void setBtnTypeVet(RadioButton btnTypeVet) {
-        this.btnTypeVet = btnTypeVet;
-    }
-
-    public RadioButton getBtnTypeSat() {
-        return btnTypeSat;
-    }
-
-    public void setBtnTypeSat(RadioButton btnTypeSat) {
-        this.btnTypeSat = btnTypeSat;
-    }
-
-    public RadioButton getBtnTrafficON() {
-        return btnTrafficON;
-    }
-
-    public void setBtnTrafficON(RadioButton btnTrafficON) {
-        this.btnTrafficON = btnTrafficON;
-    }
-
-    public RadioButton getBtnTrafficOFF() {
-        return btnTrafficOFF;
-    }
-
-    public void setBtnTrafficOFF(RadioButton btnTrafficOFF) {
-        this.btnTrafficOFF = btnTrafficOFF;
-    }
 }

@@ -1,18 +1,19 @@
 package com.unifacs.projetoavaliacao;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         Button btnSettings = (Button) findViewById(R.id.buttonSettn);
@@ -44,9 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 this.finish();
                 break;
             case R.id.buttonGnss:
+                startActivity(new Intent(this, GnssActivity.class));
+                break;
             case R.id.buttonHist:
-            case R.id.buttonNav:
                 Toast.makeText(this, R.string.wip_str ,Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.buttonNav:
+                startActivity(new Intent(this, NavigationActivity.class));
                 break;
         }
     }
