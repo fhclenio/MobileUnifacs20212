@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">MAPS</string>
     <string name="app_title">MAPS</string>
     <string name="config_str">Settings</string>
     <string name="navigation_str">Navigation</string>
@@ -46,4 +46,9 @@
     <string name="tv_sats_in_use">In Use:</string>
     <string name="tv_sats_in_view">In View:</string>
     <string name="cnr_txt">Carrier Noise Ratio (%)</string>
+    <string name="title_activity_history" translatable="false">HistoryActivity</string>
+    <string name="tv_title_history">Locations saved in the database:</string>
+    <string name="btn_log" translatable="false">LOG</string>
+    <string name="btn_map">MAP</string>
+    <string name="btn_delete">Delete history.</string>
 </resources>

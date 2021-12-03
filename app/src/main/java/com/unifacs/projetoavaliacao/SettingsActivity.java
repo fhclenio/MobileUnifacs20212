@@ -10,10 +10,13 @@ import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import androidx.room.Room;
+
 public class SettingsActivity extends Activity implements View.OnClickListener{
     private SharedPreferences sharedPrefs;
     private SharedPreferences.Editor sharedPrefsEditor;
 
+    private RoomDB db;
     private RadioButton btnDecimal;
     private RadioButton btnDecimalMin;
     private RadioButton btnDecimalSegMin;
@@ -49,6 +52,7 @@ public class SettingsActivity extends Activity implements View.OnClickListener{
 
         switchTraffic = findViewById(R.id.switchTraffic);
 
+        findViewById(R.id.btnDeleteHistory).setOnClickListener(this);
         Button btnSalvar = (Button) findViewById(R.id.btnSalvar);
         btnSalvar.setOnClickListener(this);
 
@@ -61,6 +65,11 @@ public class SettingsActivity extends Activity implements View.OnClickListener{
             case R.id.btnSalvar:
                 saveConfigs();
                 Toast.makeText(this, R.string.config_salvo ,Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.btnDeleteHistory:
+                db = Room.databaseBuilder(getApplicationContext(), RoomDB.class, "history_database").allowMainThreadQueries().build();
+                db.clearAllTables();
+                db.close();
                 break;
         }
     }

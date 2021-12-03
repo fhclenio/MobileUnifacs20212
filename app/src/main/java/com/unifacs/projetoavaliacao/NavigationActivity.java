@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
+import androidx.room.Room;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -42,6 +43,7 @@ import com.unifacs.projetoavaliacao.databinding.ActivityNavigationBinding;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 public class NavigationActivity extends FragmentActivity implements OnMapReadyCallback,
         GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener,
@@ -59,6 +61,7 @@ public class NavigationActivity extends FragmentActivity implements OnMapReadyCa
     private UiSettings mapUI;
     private Circle myLocationCircle;
     private boolean isStart;
+    private RoomDB db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,7 @@ public class NavigationActivity extends FragmentActivity implements OnMapReadyCa
         setContentView(binding.getRoot());
 
         isStart = true;
+        db = Room.databaseBuilder(getApplicationContext(), RoomDB.class, "history_database").allowMainThreadQueries().build();
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         assert mapFragment != null;
@@ -81,7 +85,10 @@ public class NavigationActivity extends FragmentActivity implements OnMapReadyCa
         setConfigs();
         startLocationUpdates();
     }
-
+    private void insertDB(Location location){
+        History his = new History(( location.getLatitude()), location.getLongitude(), Calendar.getInstance().getTime().toString());
+        db.hisDAO().insertSingle(his);
+    }
     private void setConfigs() {
         this.mapUI = mMap.getUiSettings();
         mapUI.setAllGesturesEnabled(true);
@@ -169,6 +176,7 @@ public class NavigationActivity extends FragmentActivity implements OnMapReadyCa
             LocationRequest mLocationRequest = LocationRequest.create();
             mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
             mLocationRequest.setInterval(1000);
+            mLocationRequest.setSmallestDisplacement(2f);
             mLocationRequest.setFastestInterval(1000);
             LocationCallback mLocationCallback = new LocationCallback() {
                 @Override
@@ -182,6 +190,7 @@ public class NavigationActivity extends FragmentActivity implements OnMapReadyCa
                     updateMarkerPosition(location);
                     updateMapRotation(location);
                     updateStatusBar(location);
+                    insertDB(location);
                 }
             };
             mFusedLocationProviderClient.requestLocationUpdates(mLocationRequest,
@@ -335,6 +344,11 @@ public class NavigationActivity extends FragmentActivity implements OnMapReadyCa
         if (view.getId() == R.id.imgMyLocation) {
             setMinhaLocalizacao();
         }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        db.close();
     }
 
     @Override
