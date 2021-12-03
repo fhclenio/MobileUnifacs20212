@@ -13,4 +13,5 @@
         <item name="android:background">#2B2B2B</item>
         <item name="fullscreenTextColor">#676767</item>
     </style>
+
 </resources>

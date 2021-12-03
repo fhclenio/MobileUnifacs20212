@@ -45,6 +45,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 this.finish();
                 break;
             case R.id.buttonGnss:
+                startActivity(new Intent(this, GnssActivity.class));
+                break;
             case R.id.buttonHist:
                 Toast.makeText(this, R.string.wip_str ,Toast.LENGTH_SHORT).show();
                 break;

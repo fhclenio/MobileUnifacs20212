@@ -42,4 +42,8 @@
     <string name="tv_lat" translatable="false">Latitude:</string>
     <string name="tv_long" translatable="false">Longitude:</string>
     <string name="tv_vel">Velocity:</string>
+    <string name="tv_elev" translatable="false">Altitude:</string>
+    <string name="tv_sats_in_use">In Use:</string>
+    <string name="tv_sats_in_view">In View:</string>
+    <string name="cnr_txt">Carrier Noise Ratio (%)</string>
 </resources>

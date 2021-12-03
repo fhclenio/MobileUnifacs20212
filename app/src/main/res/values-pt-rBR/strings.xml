@@ -35,4 +35,7 @@
     <string name="my_location">Minha Localização</string>
     <string name="myloc_img_desc">Botão customizado minha localização.</string>
     <string name="tv_vel">Velocidade:</string>
+    <string name="tv_sats_in_use">Em Uso:</string>
+    <string name="tv_sats_in_view">Visíveis:</string>
+    <string name="cnr_txt">Proporção de Ruído do Transmissor (%)</string>
 </resources>

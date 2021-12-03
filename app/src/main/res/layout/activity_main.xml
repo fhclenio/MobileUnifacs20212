@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FrameLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sattelites_background" />
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/textView"
@@ -16,7 +28,7 @@
         android:rotationX="5"
         android:text="@string/app_title"
         android:textAlignment="center"
-        android:textColor="#39009F"
+        android:textColor="#93002F"
         android:textSize="96sp"
         android:typeface="normal" />
 
@@ -27,7 +39,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/audiowide"
         android:text="@string/navigation_str"
-        android:drawableRight="@android:drawable/ic_menu_mapmode"
+        android:drawableEnd="@android:drawable/ic_menu_mapmode"
         android:textAlignment="viewStart" />
 
     <Button
@@ -37,7 +49,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/audiowide"
         android:text="@string/history_str"
-        android:drawableRight="@android:drawable/ic_menu_recent_history"
+        android:drawableEnd="@android:drawable/ic_menu_recent_history"
         android:textAlignment="viewStart" />
 
     <Button
@@ -47,7 +59,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/audiowide"
         android:text="@string/gnss_str"
-        android:drawableRight="@android:drawable/ic_menu_mylocation"
+        android:drawableEnd="@android:drawable/ic_menu_mylocation"
         android:textAlignment="viewStart" />
 
     <Button
@@ -57,7 +69,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/audiowide"
         android:text="@string/config_str"
-        android:drawableRight="@android:drawable/ic_menu_preferences"
+        android:drawableEnd="@android:drawable/ic_menu_preferences"
         android:textAlignment="viewStart" />
 
     <Button
@@ -67,7 +79,7 @@
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/audiowide"
         android:text="@string/credits_str"
-        android:drawableRight="@android:drawable/ic_menu_info_details"
+        android:drawableEnd="@android:drawable/ic_menu_info_details"
         android:textAlignment="viewStart" />
 
     <Button
@@ -76,7 +88,8 @@
         android:layout_height="70dp"
         android:fontFamily="@font/audiowide"
         android:text="@string/exit_str"
-        android:drawableRight="@android:drawable/ic_menu_close_clear_cancel"
+        android:drawableEnd="@android:drawable/ic_menu_close_clear_cancel"
         android:textAlignment="viewStart" />
 
 </LinearLayout>
+</FrameLayout>
